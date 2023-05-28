@@ -1,0 +1,25 @@
+{
+  "name": "express-example",
+  "version": "1.0.0",
+  "description": "Download the code from repository and follow below given instructions.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ameer-ali-jamali/Eproject_node.js.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ameer-ali-jamali/Eproject_node.js/issues"
+  },
+  "homepage": "https://github.com/ameer-ali-jamali/Eproject_node.js#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "mongoose": "^7.2.1"
+  }
+}
