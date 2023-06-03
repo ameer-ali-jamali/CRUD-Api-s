@@ -9,18 +9,30 @@ mongoose.connect(DB).then((res) => {
     }
 }).catch((err) => console.log('DB Not Connected'))
 const tableSchema = new mongoose.Schema({
-    id: Number,
     first_name: String,
     last_name: String,
     email: String,
-    gender: String,
-    ip_address: String
+    gender: String
 })
 
+const User = new mongoose.model("User", tableSchema)
 
-
-
-app.get('/', (req, res) => {
-    res.send(DB);
+const insertData = async () => {
+    try {
+        const putData = new User({
+            first_name: "Amjad",
+            last_name: "Ali",
+            email: "amjad@gmail.com",
+            gender: "male"
+        })
+        const result = await putData.save();
+        console.log(result)
+    } catch (error) {
+        console.log(error)
+    }
+}
+insertData();
+app.get('/insert', (req, res) => {
+    res.send("data inserted");
 });
-app.listen(5000, () => console.log('Example app is listening on port 4000.'));
+app.listen(3000, () => console.log('Example app is listening on port 4000.'));
