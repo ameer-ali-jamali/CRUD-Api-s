@@ -50,28 +50,18 @@ app.get('/user/get', async (req, res) => {
         res.send(error);
     }
 });
-// app.post('/user', async (req, res) => {
-//     try {
-//         const putData = new User(req.body);
-//         const result = await putData.save();
-//         res.send(result)
-//     } catch (error) {
-//         res.send(error);
-//     }
-// });
-// app.put('/user/:id', async (req, res) => {
-//     try {
-//         const userId = req.params.id;
-//         const result = await User.findByIdAndUpdate(userId, req.body)
-//         res.send(result)
-//     } catch (error) {
-//         res.send(error);
-//     }
-// });
+app.put('/user', async (req, res) => {
+    try {
+        const result = await User.findByIdAndUpdate({ "_id": "647bab0b708ad1ed4d4ea051" }, req.body)
+        res.send("Your Data Updated")
+    } catch (error) {
+        res.send(error);
+    }
+});
 app.delete('/user', async (req, res) => {
     try {
         const result = await User.findByIdAndDelete(req.body);
-        res.send(result)
+        res.send("Data Deleted")
     } catch (error) {
         res.send(error);
     }
