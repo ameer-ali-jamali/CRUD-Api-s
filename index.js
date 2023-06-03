@@ -43,9 +43,9 @@ app.get('/user', async (req, res) => {
         res.send(error);
     }
 });
-app.put('/user/:id', async (req, res) => {
+app.get('/user/get', async (req, res) => {
     try {
-        const find = await User.findByIdAndUpdate(req.params.id);
+        const find = await User.findById(req.body)
         res.send(find)
     } catch (error) {
         res.send(error);
