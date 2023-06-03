@@ -9,7 +9,6 @@ mongoose.connect(DB).then((res) => {
     }
 }).catch((err) => console.log('DB Not Connected'))
 const tableSchema = new mongoose.Schema({
-    id: Number,
     first_name: String,
     last_name: String,
     email: String,
@@ -45,7 +44,7 @@ app.get('/user', async (req, res) => {
 });
 app.get('/user/get', async (req, res) => {
     try {
-        const find = await User.findById(req.body)
+        const find = await User.find(req.body)
         res.send(find)
     } catch (error) {
         res.send(error);
@@ -60,22 +59,21 @@ app.get('/user/get', async (req, res) => {
 //         res.send(error);
 //     }
 // });
-app.put('/user/:id', async (req, res) => {
-    try {
-        const userId = req.params.id;
-        const result = await User.findByIdAndUpdate(userId, req.body)
-        res.send(result)
-    } catch (error) {
-        res.send(error);
-    }
-});
-// app.delete('/user/:id', async (req, res) => {
+// app.put('/user/:id', async (req, res) => {
 //     try {
-//         const userId = new User(req.params.id);
-//         const result = await putData.findByIdAndDelete(userId);
+//         const userId = req.params.id;
+//         const result = await User.findByIdAndUpdate(userId, req.body)
 //         res.send(result)
 //     } catch (error) {
 //         res.send(error);
 //     }
 // });
+app.delete('/user', async (req, res) => {
+    try {
+        const result = await User.findByIdAndDelete(req.body);
+        res.send(result)
+    } catch (error) {
+        res.send(error);
+    }
+});
 app.listen(3000, () => console.log('Example app is listening on port 4000.'));
