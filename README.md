@@ -1,6 +1,7 @@
 # NODE.JS CRUD API'S
 
-## The provided code sets up an Express.js server with MongoDB integration and defines various API endpoints for handling user data. Here's a description of the APIs based on the code provided:
+## The provided code sets up an Express.js server with MongoDB integration and defines various API endpoints for handling user data.
+
 ## Getting Started
 
 Download the code from repository and follow below given instructions.
