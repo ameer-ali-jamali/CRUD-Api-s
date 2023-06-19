@@ -1,6 +1,8 @@
 # NODE.JS CRUD API'S
 
+## The provided code sets up an Express.js server with MongoDB integration and defines various API endpoints for handling user data. Here's a description of the APIs based on the code provided:
 ## Getting Started
+
 Download the code from repository and follow below given instructions.
 
 ### Installing
@@ -14,8 +16,6 @@ Before running the script, make sure to add **MONGODB_URI** value in .env file.
 ```
 npm start
 ```
-
-## The provided code sets up an Express.js server with MongoDB integration and defines various API endpoints for handling user data. Here's a description of the APIs based on the code provided:
 
 ### 1. `GET /user/random`:
    - Description: Generates random user data.
