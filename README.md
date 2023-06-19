@@ -15,11 +15,6 @@ Before running the script, make sure to add **MONGODB_URI** value in .env file.
 npm start
 ```
 
-### Testing
-```
-npm test
-```
-
 ##The provided code sets up an Express.js server with MongoDB integration and defines various API endpoints for handling user data. Here's a description of the APIs based on the code provided:
 
 ###1. `GET /user/random`:
