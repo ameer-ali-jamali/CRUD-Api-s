@@ -47,7 +47,7 @@ npm start
 * [NodeJs](https://nodejs.org/en/)
 * [ExpressJs](https://expressjs.com)
 * [MongoDB](https://www.mongodb.com/)
-* [Mongoose](https://mongoosejs.com/)
+* [Mongoose ODM](https://mongoosejs.com/)
 
 ## Author
 * **Ameer Ali Jamali**
