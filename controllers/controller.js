@@ -1,26 +1,8 @@
-const faker = require('faker');
-
-const generateRandomData = () => {
-    const data = {
-        first_name: faker.name.firstName(),
-        last_name: faker.name.lastName(),
-        email: faker.internet.email(),
-        gender: faker.random.arrayElement(['Male', 'Female']),
-    };
-    return data;
-};
-const randomUser = async (req, res) => {
-    try {
-        const randomData = generateRandomData();
-        res.send(randomData);
-    } catch (error) {
-        res.send(error);
-    }
-}
 const getAll = async (req, res) => {
     try {
         const find = await User.find();
-        res.send(find)
+        // res.send(find)
+        console.log(find)
     } catch (error) {
         res.send(error);
     }
@@ -54,4 +36,4 @@ const deleteById = async (req, res) => {
 }
 
 
-module.exports = { randomUser, getAll, findById, updateById, deleteById }
+module.exports = { getAll, findById, updateById, deleteById }
