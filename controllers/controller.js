@@ -1,4 +1,3 @@
-const User = new mongoose.model("User", tableSchema)
 const faker = require('faker');
 
 const generateRandomData = () => {
