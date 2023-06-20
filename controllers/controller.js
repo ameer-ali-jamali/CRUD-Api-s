@@ -1,4 +1,6 @@
+const User = new mongoose.model("User", tableSchema)
 const faker = require('faker');
+
 const generateRandomData = () => {
     const data = {
         first_name: faker.name.firstName(),
@@ -33,3 +35,24 @@ const findById = async (req, res) => {
         res.send(error);
     }
 }
+const updateById = async (req, res) => {
+    try {
+        const userId = req.params.id;
+        const result = await User.findByIdAndUpdate(userId, req.body);
+        res.send("Your Data Updated");
+    } catch (error) {
+        res.send(error);
+    }
+}
+const deleteById = async (req, res) => {
+    try {
+        const userId = req.params.id;
+        const result = await User.findByIdAndDelete(userId);
+        res.send("Data Deleted")
+    } catch (error) {
+        res.send(error);
+    }
+}
+
+
+module.exports = { randomUser, getAll, findById, updateById, deleteById }
