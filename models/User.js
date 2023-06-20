@@ -25,3 +25,5 @@ const tableSchema = new mongoose.Schema({
     gender: String
 });
 const User = mongoose.model("User", tableSchema);
+
+module.exports = User;
