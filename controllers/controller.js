@@ -1,8 +1,9 @@
+const User = require('../models/User')
+
 const getAll = async (req, res) => {
     try {
         const find = await User.find();
-        // res.send(find)
-        console.log(find)
+        res.send(find)
     } catch (error) {
         res.send(error);
     }

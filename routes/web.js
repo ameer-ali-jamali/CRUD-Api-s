@@ -15,7 +15,8 @@ router.put('/user/:id', updateById);
 router.delete('/user/:id', deleteById);
 
 
+
 app.listen(port, () => {
     console.log(`Example app listening on port http://localhost:${port}`)
 })
-// module.exports = router;
+module.exports = router;
