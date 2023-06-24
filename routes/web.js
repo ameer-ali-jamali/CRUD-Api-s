@@ -3,7 +3,7 @@ const router = express.Router();
 const app = express()
 const port = 3000;
 
-const { getAll, findById, updateById, deleteById } = require('../controllers/controller');
+const { getAll, findById, updateById, deleteById } = require('../controllers/StudentController');
 
 router.use(express.json());
 
@@ -11,8 +11,8 @@ app.use('/user', router)
 
 router.get('/', getAll);
 router.get('/:id', findById);
-router.put('/:id', updateById);
-router.delete('/:id', deleteById);
+// router.put('/:id', updateById);
+// router.delete('/:id', deleteById);
 
 
 

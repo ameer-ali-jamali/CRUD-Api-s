@@ -17,11 +17,12 @@ async function connect() {
 connect()
 
 const tableSchema = new mongoose.Schema({
+    roll_number: String,
     first_name: String,
     last_name: String,
     email: String,
     gender: String
 });
-const User = mongoose.model("User", tableSchema);
+const Student = mongoose.model("Student", tableSchema);
 
-module.exports = User;
+module.exports = Student;
