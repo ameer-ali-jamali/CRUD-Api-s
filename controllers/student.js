@@ -1,8 +1,8 @@
-const User = require('../models/Student')
+const Student = require('../models/Student')
 
 const getAll = async (req, res) => {
     try {
-        const find = await User.find();
+        const find = await Student.find();
         res.send(find)
     } catch (error) {
         res.send(error);
@@ -11,7 +11,7 @@ const getAll = async (req, res) => {
 const findById = async (req, res) => {
     try {
         const userId = req.params.id;
-        const find = await User.findById(userId)
+        const find = await Student.findById(userId)
         res.send(find)
     } catch (error) {
         res.send(error);
@@ -20,8 +20,8 @@ const findById = async (req, res) => {
 const updateById = async (req, res) => {
     try {
         const userId = req.params.id;
-        const result = await User.findByIdAndUpdate(userId, req.body);
-        const find = await User.findById(userId)
+        const result = await Student.findByIdAndUpdate(userId, req.body);
+        const find = await Student.findById(userId)
         res.send(find);
     } catch (error) {
         res.send(error);
@@ -30,7 +30,7 @@ const updateById = async (req, res) => {
 const deleteById = async (req, res) => {
     try {
         const userId = req.params.id;
-        const result = await User.findByIdAndDelete(userId);
+        const result = await Student.findByIdAndDelete(userId);
         res.send("Data Deleted SuccessFully")
     } catch (error) {
         res.send(error);
