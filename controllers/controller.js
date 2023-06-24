@@ -11,7 +11,7 @@ const getAll = async (req, res) => {
 const findById = async (req, res) => {
     try {
         const userId = req.params.id;
-        const find = await User.find(userId)
+        const find = await User.findById(userId)
         res.send(find)
     } catch (error) {
         res.send(error);
@@ -21,7 +21,8 @@ const updateById = async (req, res) => {
     try {
         const userId = req.params.id;
         const result = await User.findByIdAndUpdate(userId, req.body);
-        res.send("Your Data Updated");
+        const find = await User.findById(userId)
+        res.send(find);
     } catch (error) {
         res.send(error);
     }
@@ -30,7 +31,7 @@ const deleteById = async (req, res) => {
     try {
         const userId = req.params.id;
         const result = await User.findByIdAndDelete(userId);
-        res.send("Data Deleted")
+        res.send("Data Deleted SuccessFully")
     } catch (error) {
         res.send(error);
     }

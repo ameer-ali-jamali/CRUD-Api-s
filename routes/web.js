@@ -7,12 +7,12 @@ const { getAll, findById, updateById, deleteById } = require('../controllers/con
 
 router.use(express.json());
 
-app.use('/', router)
+app.use('/user', router)
 
-router.get('/users', getAll);
-router.get('/user/:id', findById);
-router.put('/user/:id', updateById);
-router.delete('/user/:id', deleteById);
+router.get('/', getAll);
+router.get('/:id', findById);
+router.put('/:id', updateById);
+router.delete('/:id', deleteById);
 
 
 
